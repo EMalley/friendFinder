@@ -7,14 +7,14 @@ module.exports = function (app) {
     });
 
     app.post('/api/friends', function (req, res) {
-        var difference = 50;
+        var difference = 30;
         var matchName = '';
         var matchPhoto = '';
 
         // loop through the friends data in firends.js
         friends.forEach(function (friend) {
             var matchedScoresArr = [];
-            var totalDifference = 50;
+            var totalDifference = 30;
 
             function add(total, num) {
                 return total + num;

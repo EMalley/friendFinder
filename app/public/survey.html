@@ -206,7 +206,7 @@
         </div>
         <br><br>
 
-        <!-- Modal -->
+        <!-- Modal for matches -->
         <div class="modal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -256,17 +256,17 @@
                 var currentURL = window.location.origin;
                 // Ajax call to POST to Friends API
                 $.post(currentURL + "/api/friends", matchData, function (data) {
-                    alert("data sent")
+                    // alert("data sent")
                     if (data.name !== undefined) {
                         matchStatus.html('Your Match');
-                        modalBody.html('<p>is ' + data.name + '</p><img src="' + data.photo + '"height= 200px">');
+                        modalBody.html('<p>is ' + data.name + '</p><img src="' + data.photo + '" height= 200px">');
                     } else {
                         matchStatus.html("Not enought Data");
                         modalBody.html("<p>Please double check and fill out the entire form</p>");
                     }
                 })
             }
-
+            $('.modal').modal('toggle')
 
         });
         
